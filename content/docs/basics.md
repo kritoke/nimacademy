@@ -2,6 +2,7 @@
 title = "Basics"
 description = "Getting started, basic data types, and basic operations.."
 slug = "basics"
+weight = 10
 +++
 
 # Basics
@@ -10,7 +11,7 @@ slug = "basics"
 
 ### Installing Nim
 
-Please refer to the [Install Nim Guide](https://nim-lang.org/install.html). 
+Please refer to the [Install Nim Guide](https://nim-lang.org/install.html).
 
 ## Basic Data Types
 
