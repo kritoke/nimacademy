@@ -32,8 +32,8 @@ You can also declare many variables at the same time:
 ```
 var
   num1 = 42
-  num2 = 44
-  num3 = 46
+  string1 = "it doesn't have to be the same type"
+  char1 = 'c'
 ```
 
 Unlike most languages you can use both  snake case and camel case, they are interchangeable:
