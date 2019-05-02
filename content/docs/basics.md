@@ -98,6 +98,19 @@ let num8bitunsigned: uint8 = 79
 
 ### Floats
 
+The fastest type for floats is `float`:
+
+```
+let floatNum: float = 42.0
+```
+
+Floats have two different suffixes based on their size, `'f32` for float32 and `'f64` for float64:
+
+```
+let floatNum32 = 44'f32
+let floatNum64 = 44'f64
+```
+
 ### Characters
 
 ### Strings
