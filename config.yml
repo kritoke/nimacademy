@@ -1,6 +1,7 @@
 title: Nim Academy
 theme: hugo-book
 disableKinds: ["taxonomy", "taxonomyTerm"]
+baseURL: https://nimacademy.com
 # themesDir: ../..
 
 # Book configuration
