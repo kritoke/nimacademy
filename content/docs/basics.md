@@ -43,6 +43,14 @@ var snake_case_variable = "this is the same as snakeCaseVariable"
 var camelCaseVariable = "this is the same as camel_case_variable"
 ```
 
+If you need to use the same word as a reserved keyword, you can use stropping by adding backticks:
+
+```
+var `var` = "this is a stropped variable
+```
+
+Variables cannot begin with a number and cannot contain two consecutive underscores, it can also use Unicode characters.
+
 ## var
 
 The `var` keyword declares a variable that can be changed (it is mutable):
@@ -95,14 +103,6 @@ let num8bitunsigned: uint8 = 79
 ### Strings
 
 ### Booleans
-
-### Inferred Types
-
-Nim can also infer what type something is:
-```
-let intNumber = 79
-let stringVariable = "this is a string"
-```
 
 ## Basic Operations
 
