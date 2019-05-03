@@ -9,7 +9,7 @@ weight = 10
 
 ## Getting Started
 
-### Installing Nim
+### **Installing Nim**
 
 Please refer to the [Install Nim Guide](https://nim-lang.org/install.html).
 
@@ -51,7 +51,7 @@ var `var` = "this is a stropped variable
 
 Variables cannot begin with a number and cannot contain two consecutive underscores, it can also use Unicode characters.
 
-### var
+### **var**
 
 The `var` keyword declares a variable that can be changed (it is mutable):
 
@@ -60,7 +60,7 @@ var thisValueCanChange = 4
 thisValueCanChange = 5
 ```
 
-### let
+### **let**
 
 The `let` keyword declares a variable that cannot change once it is set (it is immutable), but doesn't have to be known at compile time:
 
@@ -68,7 +68,7 @@ The `let` keyword declares a variable that cannot change once it is set (it is i
 let thisValueCannotChange = 42
 ```
 
-### const
+### **const**
 
 The `const` keyword declares a variable that cannot change (it is immutable) and is known at compile time:
 
@@ -78,7 +78,7 @@ const thisValueCannotChangeEither = 42
 
 ## Basic Data Types
 
-### Integers
+### **Integers**
 
 Support for binary, octal, hexadecimal numbers comes built-in:
 
@@ -102,7 +102,7 @@ let num8bit: int8 = -79
 let num8bitunsigned: uint8 = 79
 ```
 
-### Floats
+### **Floats**
 
 The fastest type for floats is `float`:
 
@@ -117,23 +117,23 @@ let floatNum32 = 44'f32
 let floatNum64 = 44'f64
 ```
 
-### Characters
+### **Characters**
 
-### Strings
+### **Strings**
 
-### Booleans
+### **Booleans**
 
 ## Basic Operations
 
-### Arithmetic
+### **Arithmetic**
 
-### Boolean
+### **Boolean**
 
-### Comparison
+### **Comparison**
 
-### String Concatenation
+### **String Concatenation**
 
-### Type Conversion
+### **Type Conversion**
 
 Convert a float to an int (it does not round the number, but just drops any decimals):
 
