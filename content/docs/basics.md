@@ -110,7 +110,7 @@ The fastest type for floats is `float`:
 let floatNum: float = 42.0
 ```
 
-Floats have two different suffixes based on their size, `'f32` for float32 and `'f64` for float64:
+Floats have two different suffixes based on their size and is preceded with a backtick (') and the size ( `'f32` for float32 and `'f64` for float64):
 
 ```
 let floatNum32 = 44'f32
@@ -118,6 +118,14 @@ let floatNum64 = 44'f64
 ```
 
 ### **Characters**
+
+The `char` type is for representing a single ASCII character and is wrapped with two single tickets ('):
+
+```
+let zed: char = 'z'
+let two: char = '2'
+let pound: char = '#'
+```
 
 ### **Strings**
 
