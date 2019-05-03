@@ -36,7 +36,7 @@ var
   char1 = 'c'
 ```
 
-Unlike most languages you can use both  snake case and camel case, they are interchangeable:
+Unlike most languages you can use both snake case and camel case, they are interchangeable:
 
 ```
 var snake_case_variable = "this is the same as snakeCaseVariable"
@@ -54,6 +54,7 @@ Variables cannot begin with a number and cannot contain two consecutive undersco
 ## var
 
 The `var` keyword declares a variable that can be changed (it is mutable):
+
 ```
 var thisValueCanChange = 4
 thisValueCanChange = 5
@@ -80,17 +81,22 @@ const thisValueCannotChangeEither = 42
 ### Integers
 
 Support for binary, octal, hexadecimal numbers comes built-in:
+
 ```
 let num0: int = 79 # decimal number
 let num1: int = 0x4F # hex number
 let num2: int = 0b1001111 #  binary number
 let num3: int = 0o117 #  octal number
 ```
+
 There is also support for unsigned numbers:
+
 ```
 let num0: uint = 79 # unsigned  number
 ```
+
 Numbers can be explicitly assigned a size by adding it after `int` or `uint` (8, 16, 32, 64):
+
 ```
 let num8bit: int8 = -79
 let num8bitunsigned: uint8 = 79
@@ -126,3 +132,19 @@ let floatNum64 = 44'f64
 ### Comparison
 
 ### String Concatenation
+
+### Type Conversion
+
+Convert a float to an int (it does not round the number, but just drops any decimals):
+
+```
+let a = 4.0
+echo int(a)
+```
+
+Convert an int to a float:
+
+```
+let b = 4
+echo float(b)
+```
