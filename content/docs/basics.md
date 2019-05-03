@@ -39,8 +39,9 @@ var
 Unlike most languages you can use both snake case and camel case, they are interchangeable:
 
 ```
-var snake_case_variable = "this is the same as snakeCaseVariable"
-var camelCaseVariable = "this is the same as camel_case_variable"
+var
+  snake_case_variable = "this is the same as snakeCaseVariable"
+  camelCaseVariable = "this is the same as camel_case_variable"
 ```
 
 If you need to use the same word as a reserved keyword, you can use stropping by adding backticks:
@@ -83,10 +84,11 @@ const thisValueCannotChangeEither = 42
 Support for binary, octal, hexadecimal numbers comes built-in:
 
 ```
-let num0: int = 79 # decimal number
-let num1: int = 0x4F # hex number
-let num2: int = 0b1001111 #  binary number
-let num3: int = 0o117 #  octal number
+let
+  num0: int = 79 # decimal number
+  num1: int = 0x4F # hex number
+  num2: int = 0b1001111 #  binary number
+  num3: int = 0o117 #  octal number
 ```
 
 There is also support for unsigned numbers:
@@ -98,8 +100,9 @@ let num0: uint = 79 # unsigned  number
 Numbers can be explicitly assigned a size by adding it after `int` or `uint` (8, 16, 32, 64):
 
 ```
-let num8bit: int8 = -79
-let num8bitunsigned: uint8 = 79
+let
+  num8bit: int8 = -79
+  num8bitunsigned: uint8 = 79
 ```
 
 ### **Floats**
@@ -113,8 +116,9 @@ let floatNum: float = 42.0
 Floats have two different suffixes based on their size and is preceded with a backtick (') and the size ( `'f32` for float32 and `'f64` for float64):
 
 ```
-let floatNum32 = 44'f32
-let floatNum64 = 44'f64
+let
+  floatNum32: float = 44'f32
+  floatNum64: float = 44'f64
 ```
 
 ### **Characters**
@@ -122,12 +126,24 @@ let floatNum64 = 44'f64
 The `char` type is for representing a single ASCII character and is wrapped with two single tickets ('):
 
 ```
-let zed: char = 'z'
-let two: char = '2'
-let pound: char = '#'
+let
+  zed: char = 'z'
+  two: char = '2'
+  pound: char = '#'
 ```
 
 ### **Strings**
+
+Strings are best explained as a series of characters and is wrapped around two double quotes ("), these are all valid:
+
+```
+let
+  a: string = "cool"
+  b: string = "This is an example sentence."
+  c: string = ""
+  d: string = "42"
+  e: string = "@"
+```
 
 ### **Booleans**
 
