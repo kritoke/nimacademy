@@ -13,5 +13,5 @@ collections:
     slug: "{{slug}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Weight", name: "weight", widget: "number", required: "false"}
+      - {label: "Weight", name: "weight", widget: "number", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
