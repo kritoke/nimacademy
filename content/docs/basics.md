@@ -161,6 +161,14 @@ let
 
 ### **Booleans**
 
+A boolean type can only have two values, `true` or `false`.
+
+```
+let
+  trueVariable: bool = true
+  falseVariable: bool = false
+```
+
 ## Basic Operations
 
 ### **Arithmetic**
