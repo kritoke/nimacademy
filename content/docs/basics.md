@@ -87,14 +87,14 @@ Support for binary, octal, hexadecimal numbers comes built-in:
 let
   num0: int = 79 # decimal number
   num1: int = 0x4F # hex number
-  num2: int = 0b1001111 #  binary number
-  num3: int = 0o117 #  octal number
+  num2: int = 0b1001111 # binary number
+  num3: int = 0o117 # octal number
 ```
 
 There is also support for unsigned numbers:
 
 ```
-let num0: uint = 79 # unsigned  number
+let num0: uint = 79 # unsigned number
 ```
 
 Numbers can be explicitly assigned a size by adding it after `int` or `uint` (8, 16, 32, 64):
@@ -130,6 +130,20 @@ let
   zed: char = 'z'
   two: char = '2'
   pound: char = '#'
+```
+
+### **Special Characters**
+
+- `\n` is a newline character
+- `\t` is a tab character
+- `\\` is a backslash (since the first `\` is an escape character)
+- `r"..."` is for raw strings to output an exact string ignoring special characters in the quotes
+
+```
+echo "This has a newline at the end.\n"
+echo "This has a \t tab in the sentence."
+echo "This has a \\ backslash in the sentence."
+echo r"This has\n no special characters\n at all."
 ```
 
 ### **Strings**
