@@ -44,7 +44,7 @@ var
   camelCaseVariable = "this is the same as camel_case_variable"
 ```
 
-If you need to use the same word as a reserved keyword, you can use stropping by adding backticks:
+If you need to use the same word as a reserved keyword, you can use `stropping` by adding backticks (`):
 
 ```
 var `var` = "this is a stropped variable
