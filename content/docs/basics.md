@@ -51,7 +51,7 @@ var `var` = "this is a stropped variable
 
 Variables cannot begin with a number and cannot contain two consecutive underscores, it can also use Unicode characters.
 
-## var
+### var
 
 The `var` keyword declares a variable that can be changed (it is mutable):
 
@@ -60,7 +60,7 @@ var thisValueCanChange = 4
 thisValueCanChange = 5
 ```
 
-## let
+### let
 
 The `let` keyword declares a variable that cannot change once it is set (it is immutable), but doesn't have to be known at compile time:
 
@@ -68,7 +68,7 @@ The `let` keyword declares a variable that cannot change once it is set (it is i
 let thisValueCannotChange = 42
 ```
 
-## const
+### const
 
 The `const` keyword declares a variable that cannot change (it is immutable) and is known at compile time:
 
