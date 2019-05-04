@@ -13,6 +13,15 @@ weight = 10
 
 Please refer to the [Install Nim Guide](https://nim-lang.org/install.html).
 
+### **Indentation**
+
+Nim uses indentation similar to Python, it uses two spaces instead of brackets or end like other languages:
+
+```
+if 42 == 42:
+  echo "42 is equal to 42"
+```
+
 ## Assigning Variables
 
 Nim is a statically typed programming language, so a type needs to be declared before using the value:
