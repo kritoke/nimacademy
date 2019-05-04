@@ -188,6 +188,27 @@ let
 
 ### **String Concatenation**
 
+As long as you use `var` to define the string, we can use `add` to add another string to the string variable:
+
+```
+var a = "test strings are "
+a.add("for testing")
+echo a # outputs "test strings are for testing"
+```
+We can also combine the two to echo to the screen using two ways:
+```
+var a = "test strings are "
+echo a & "for testing" # outputs "test strings are for testing"
+echo a, "for testing" # outputs "test strings are for testing"
+```
+We also can use `&` to combine strings into a variable declaration:
+```
+var a = "test strings are "
+var b = "for testing"
+var c = a & b
+var d = a, b # this won't compile
+```
+
 ### **Type Conversion**
 
 Convert a float to an int (it does not round the number, but just drops any decimals):
