@@ -24,6 +24,17 @@ You can override this page in:
 
   {{ partial "docs/inject/body" . }}
   {{ template "_internal/google_analytics_async.html" . }}
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 
 </html>
