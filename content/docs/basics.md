@@ -182,9 +182,47 @@ let
 
 ### **Arithmetic**
 
-### **Boolean**
-
 ### **Comparison**
+
+Nim provides `<`,`>`, `==`, `!=` boolean operators.  These support numbers, characters, and strings:
+
+```
+5 < 4 # false
+5 == 5 # true
+4.4 < 55.5 # true
+'c' < 'd' # true
+'c' != 'c' # false
+"first" < "second" # true
+```
+Character/String comparison rules:
+
+* All uppercase letters come before lowercase letters.
+* When comparing strings, it is char-by-char, the letters that come first are smaller than characters later in the alphabet.
+* A shorter string is considered smaller than a longer one.
+
+There are also logical operators `and`, `or`, `xor`, and `not`.
+
+* The `and` operator returns `true` only if both members are `true`.
+* The `or` operator returns `true` if at least one member is `true`.
+* The `xor` operator returns `true` if one member is `true`, but the other is not.
+* The `not` operator negates the boolean value to the opposite value and only takes one argument.
+
+```
+true and true # is true
+true and false # is false
+false and false # is false
+
+true or true # is true
+true or false # is true
+false or false # is false
+
+true xor true # is false
+true xor false # is true
+false xor false # is false
+
+not true # is false
+not false # is true
+```
 
 ### **String Concatenation**
 
@@ -217,9 +255,7 @@ Convert a float to an int (it does not round the number, but just drops any deci
 let a = 4.0
 echo int(a)
 ```
-
 Convert an int to a float:
-
 ```
 let b = 4
 echo float(b)
