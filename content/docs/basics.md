@@ -182,6 +182,29 @@ let
 
 ### **Arithmetic**
 
+The following math operators are in Nim: `+`, `-`, `*`, and `/`.  
+
+The `/` operator will always give a floating point number as a result even if no remainders exist:
+```
+10/5 # results in 2.0
+```
+In a similar manner, when doing any arithmetic with floating point numbers, a float will result even if no remainders or decimals result:
+```
+4.25 - 2.25 # results in 2.0
+2.0/2.0 # results in 1.0
+```
+The precedence of math operation is as expected, with multiplying and dividing having a higher priority than addition/subtraction.
+
+Integer division is possible by using `div` operator to discard the remainder:
+```
+5 div 4 # results in 1
+```
+To get the remainder only, the modulus operator, `mod` can be used:
+```
+10 mod 4 # results in 2
+```
+These two operators will always result in integers.
+
 ### **Comparison**
 
 Nim provides `<`,`>`, `==`, `!=` boolean operators.  These support numbers, characters, and strings:
