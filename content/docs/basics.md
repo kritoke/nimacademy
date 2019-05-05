@@ -364,8 +364,9 @@ Adding a `$` to a variable name makes it into a string:
 
 ```
 
-var number: int = 44
-var itsAString: string = \$number
+var 
+  number: int = 44
+  itsAString: string = $number
 
 ```
 
