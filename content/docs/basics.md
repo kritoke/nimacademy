@@ -350,10 +350,11 @@ We also can use `&` to combine strings into a variable declaration:
 
 ```
 
-var a = "test strings are "
-var b = "for testing"
-var c = a & b
-var d = a, b # this won't compile
+var 
+  a = "test strings are "
+  b = "for testing"
+  c = a & b
+  d = a, b # this won't compile
 
 ```
 
