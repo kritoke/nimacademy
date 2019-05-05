@@ -67,9 +67,9 @@ You can also declare many variables at the same time:
 ```
 
 var
-num1 = 42
-string1 = "it doesn't have to be the same type"
-char1 = 'c'
+  num1 = 42
+  string1 = "it doesn't have to be the same type"
+  char1 = 'c'
 
 ```
 
@@ -78,8 +78,8 @@ Unlike most languages you can use both snake case and camel case, they are inter
 ```
 
 var
-snake_case_variable = "this is the same as snakeCaseVariable"
-camelCaseVariable = "this is the same as camel_case_variable"
+  snake_case_variable = "this is the same as snakeCaseVariable"
+  camelCaseVariable = "this is the same as camel_case_variable"
 
 ```
 
@@ -133,10 +133,10 @@ Support for binary, octal, hexadecimal numbers comes built-in:
 ```
 
 let
-num0: int = 79 # decimal number
-num1: int = 0x4F # hex number
-num2: int = 0b1001111 # binary number
-num3: int = 0o117 # octal number
+  num0: int = 79 # decimal number
+  num1: int = 0x4F # hex number
+  num2: int = 0b1001111 # binary number
+  num3: int = 0o117 # octal number
 
 ```
 
@@ -153,8 +153,8 @@ Numbers can be explicitly assigned a size by adding it after `int` or `uint` (8,
 ```
 
 let
-num8bit: int8 = -79
-num8bitunsigned: uint8 = 79
+  num8bit: int8 = -79
+  num8bitunsigned: uint8 = 79
 
 ```
 
@@ -173,8 +173,8 @@ Floats have two different suffixes based on their size and is preceded with a ba
 ```
 
 let
-floatNum32: float = 44'f32
-floatNum64: float = 44'f64
+  floatNum32: float = 44'f32
+  floatNum64: float = 44'f64
 
 ```
 
@@ -185,9 +185,9 @@ The `char` type is for representing a single ASCII character and is wrapped with
 ```
 
 let
-zed: char = 'z'
-two: char = '2'
-pound: char = '#'
+  zed: char = 'z'
+  two: char = '2'
+  pound: char = '#'
 
 ```
 
@@ -214,11 +214,11 @@ Strings are best explained as a series of characters and is wrapped around two d
 ```
 
 let
-a: string = "cool"
-b: string = "This is an example sentence."
-c: string = ""
-d: string = "42"
-e: string = "@"
+  a: string = "cool"
+  b: string = "This is an example sentence."
+  c: string = ""
+  d: string = "42"
+  e: string = "@"
 
 ```
 
@@ -229,8 +229,8 @@ A boolean type can only have two values, `true` or `false`.
 ```
 
 let
-trueVariable: bool = true
-falseVariable: bool = false
+  trueVariable: bool = true
+  falseVariable: bool = false
 
 ```
 
@@ -383,9 +383,5 @@ Convert an int to a float:
 
 let b = 4
 echo float(b)
-
-```
-
-```
 
 ```
