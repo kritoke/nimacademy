@@ -157,6 +157,13 @@ let
   num8bitunsigned: uint8 = 79
 
 ```
+You can also use underscores to improve readability of numbers, Nim ignores them:
+```
+let 
+  numWithUnderscores = 1_000_000
+  numWithoutUnderscores = 1000000
+echo numWithUnderscores == numWithoutUnderscores # prints true
+```
 
 ### **Floats**
 
