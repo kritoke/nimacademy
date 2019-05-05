@@ -272,6 +272,12 @@ var d = a, b # this won't compile
 
 ### **Type Conversion**
 
+Adding a `$` to a variable name makes it into a string:
+```
+var number: int = 44
+var itsAString: string = $number
+```
+
 Convert a float to an int (it does not round the number, but just drops any decimals):
 
 ```
