@@ -15,7 +15,7 @@ Please refer to the [Install Nim Guide](https://nim-lang.org/install.html).
 
 ### **Compiling**
 
-To compile a nim file in the most basic way:
+To compile a nim file in the most basic way (executable will have same name as the part before `.nim`):
 
 ```
 nim c nimFileName.nim
