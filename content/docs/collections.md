@@ -27,6 +27,15 @@ As with most programming languages, referencing an index in an array, starts at 
 var a: array = ['a', 'b', 'c','d']
 echo("The first element of the array is ", a[0])
 ```
+We can set a custom index range as well:
+```
+var customArrayAlpha: array[-6 .. -3, char] = ['a', 'b', 'c', 'd']
+var customArrayInt: array[-3 .. 0, int] = [1, 2, 3, 4]
+
+echo customArrayAlpha[-5] # output the second element
+echo customArrayInt[-1] # output the third element
+```
+
 There is a prefix that can be used to target the last part of the array, so to get the last element, use `^` as a prefix:
 ```
 var a: array = ['a', 'b', 'c','d']
@@ -40,5 +49,18 @@ var a: array = ['a', 'b', 'c','d']
 echo("Elements 0 to 2 in the array are ", a[ 0 .. 2])
 ```
 ## Sequences
+
+Sequences are dynamic in size and can grow as needed, there are two ways to define a new sequence:
+
+```
+var 
+  sequenceA: seq[char] = @['a', 'b']
+  sequenceB = newSeq[char](2) # use this if size known ahead of time, as it is more efficient
+```
+To add to the sequence, we use `add`  to assign a value:
+```
+var openSequence: seq[char] = @[]
+openSequence.add('c')
+```
 
 ## Sets
