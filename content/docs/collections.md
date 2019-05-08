@@ -78,3 +78,17 @@ echo sequenceNum.len # outputs 3
 ```
 
 ## Sets
+
+Sets are an ordinal type (only accepts values that can be counted) and must each value must be unique. It can include `char`, `int8`, `int16`, `enum`, and `unit8` for example.
+
+```
+var charSet: set[char]
+charSet = {'a', 'e', 'c', 'd'}
+```
+
+The order of the items being stored are not kept track of, so we cannot use an index to get a value, but can use the `in` keyword to see if a value is in the set:
+```
+var charSet: set[char]
+charSet = {'a', 'e', 'c', 'd'}
+echo 'c' in charSet # outputs true
+```
