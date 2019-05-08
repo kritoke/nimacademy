@@ -29,8 +29,9 @@ echo("The first element of the array is ", a[0])
 ```
 We can set a custom index range as well:
 ```
-var customArrayAlpha: array[-6 .. -3, char] = ['a', 'b', 'c', 'd']
-var customArrayInt: array[-3 .. 0, int] = [1, 2, 3, 4]
+var 
+  customArrayAlpha: array[-6 .. -3, char] = ['a', 'b', 'c', 'd']
+  customArrayInt: array[-3 .. 0, int] = [1, 2, 3, 4]
 
 echo customArrayAlpha[-5] # output the second element
 echo customArrayInt[-1] # output the third element
@@ -54,13 +55,26 @@ Sequences are dynamic in size and can grow as needed, there are two ways to defi
 
 ```
 var 
-  sequenceA: seq[char] = @['a', 'b']
+  sequenceA: seq[char] = @['a', 'b'] # to initialize with actual values
   sequenceB = newSeq[char](2) # use this if size known ahead of time, as it is more efficient
 ```
-To add to the sequence, we use `add`  to assign a value:
+To add to the sequence without a defined size, we use `add`  to assign a value:
 ```
 var openSequence: seq[char] = @[]
 openSequence.add('c')
+```
+To add to the sequence with a defined size, we would reference the index to add a  value:
+```
+var knownSizeSequence: seq[int] = newSeq[int](2) 
+knownSizeSequence[0] = 2
+knownSizeSequence[1] = 3
+```
+
+### Sequence Length
+To get the sequence length, you can use the `len` syntax:
+```
+var sequenceNum = @[4, 5, 6]
+echo sequenceNum.len # outputs 3
 ```
 
 ## Sets
