@@ -11,6 +11,8 @@ Create the directory for the application and then cd into it and run, it will as
 ```
 nimble init
 ```
+## .nimble File
+
 You can add `binDir` to define the location for binary files to go:
 ```
 binDir = 'bin'
