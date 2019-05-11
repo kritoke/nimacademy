@@ -51,11 +51,3 @@ echo person.birthYear # 1333
 ## Objects
 
 ## Enums
-
-```
-
-```
-
-```
-
-```
