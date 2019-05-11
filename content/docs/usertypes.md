@@ -50,4 +50,26 @@ echo person.birthYear # 1333
 
 ## Objects
 
+An `object` type
+
+```
+type
+  Book = object
+    name: string
+    publishYear: int
+```
+
+You can initialize the defined object type using the following syntax:
+
+```
+var got = Book(name: "A Game of Thrones", publishYear: 1996)
+```
+
+The underlying data can be referenced using dot notation just like it was in a tuple:
+
+```
+echo got.name # "A Game of Thrones"
+echo got.publishYear # 1996
+```
+
 ## Enums
