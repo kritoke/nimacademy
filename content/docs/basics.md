@@ -124,6 +124,13 @@ const thisValueCannotChangeEither = 42
 
 ```
 
+## Export Symbol
+
+To allow a variable, procedure, object, etc to be exported to be accessed outside of a module you have to add an `*`:
+```
+var a*: int # this is available outside of the module
+```
+
 ## Comments
 
 Comments start with a `#`:
