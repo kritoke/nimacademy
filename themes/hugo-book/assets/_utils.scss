@@ -2,6 +2,14 @@
   display: flex;
 }
 
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-even {
+  flex: 1 1;
+}
+
 .justify-start {
   justify-content: flex-start;
 }
@@ -26,12 +34,8 @@
   margin: 0 auto;
 }
 
-.mr-auto {
-  margin-right: auto;
-}
-
-.hide {
-  display: none;
+.text-center {
+  text-align: center;
 }
 
 @mixin fixed {
