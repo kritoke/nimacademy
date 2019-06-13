@@ -124,6 +124,36 @@ const thisValueCannotChangeEither = 42
 
 ```
 
+## Comments
+
+Comments start with a `#`:
+```
+# this is a comment
+```
+Multiline comments are started with a `#[` and ended with a `]#`:
+```
+#[
+This is a 
+multiline comment
+on a few lines.
+  #[
+    These comments
+    can also
+    be nested!
+  ]#
+]#
+```
+Document comments start with a `##` and are used when generating documentation and are only generated if the types/procedures/etc are exported or public, as when using a `*`.
+```
+var number*: int = 44 ## number is used to store a number.
+```
+A `discard` statement can also be used with long string literals `"""` to create comments:
+```
+discard """This is just like
+a multiline comment
+but with the discard statement"""
+```
+
 ## Basic Data Types
 
 ### **Integers**
