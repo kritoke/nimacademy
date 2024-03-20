@@ -40,7 +40,7 @@ Nim uses indentation similar to Python, it uses two spaces instead of brackets o
 ```
 
 if 42 == 42:
-echo "42 is equal to 42"
+  echo "42 is equal to 42"
 
 ```
 
