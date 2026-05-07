@@ -5,6 +5,6 @@ pkgs.mkShell {
 
   buildInputs = [
     pkgs.hugo
-    pkgs.nodePackages.postcss-cli
+    pkgs.postcss
   ];
 }
