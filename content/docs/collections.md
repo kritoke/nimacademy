@@ -6,89 +6,141 @@ weight = 20
 
 # Collections
 
+Collections hold groups of values. Nim has different types depending on what you need.
+
 ## Arrays
 
-The array type is a list of elements of the same type and the size does not change, so must be defined at compile time:
+Arrays hold a fixed number of items of the same type. Think of it like numbered boxes in a row:
 
 ```
-var a: array[2, int] = [3, 2]
-```
-Just as with basic variable types, the type can often be inferred:
-```
-var a = [3, 2]
-```
-If we don't know the value, but still want to define it, we can declare it with the type and size:
-```
-var a: array[3, char]
-```
-### **Indexes**
-As with most programming languages, referencing an index in an array, starts at `0`:
-```
-var a: array = ['a', 'b', 'c','d']
-echo("The first element of the array is ", a[0])
-```
-We can set a custom index range as well:
-```
-var 
-  customArrayAlpha: array[-6 .. -3, char] = ['a', 'b', 'c', 'd']
-  customArrayInt: array[-3 .. 0, int] = [1, 2, 3, 4]
-
-echo customArrayAlpha[-5] # output the second element
-echo customArrayInt[-1] # output the third element
+var scores: array[3, int] = [100, 95, 80]
+echo scores[0]  # 100 (first box)
 ```
 
-There is a prefix that can be used to target the last part of the array, so to get the last element, use `^` as a prefix:
+The size must be known when you compile the program (before it runs).
+
+### Indexes
+
+Arrays start counting at 0 - the first element is at position 0:
+
 ```
-var a: array = ['a', 'b', 'c','d']
-echo("The last element of the array is ", a[^1])
+var fruits: array[4, string] = ["apple", "banana", "cherry", "date"]
+echo fruits[0]  # "apple"
+echo fruits[3]  # "date"
 ```
 
-### **Slicing**
-We can use a `start .. stop` syntax to get a range of values in an array:
+You can use `^1` to get the last element, `^2` for second to last, etc:
+
 ```
-var a: array = ['a', 'b', 'c','d']
-echo("Elements 0 to 2 in the array are ", a[ 0 .. 2])
+echo fruits[^1]  # "date" (last one)
+echo fruits[^2]  # "cherry" (second to last)
 ```
+
+### Custom Indexes
+
+You can set your own starting number for indexes:
+
+```
+var days = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+echo days[1]   # "Tue"
+echo days[5]   # "Fri"
+```
+
+### Slicing
+
+Get a portion of an array with `..`:
+
+```
+var letters = ['a', 'b', 'c', 'd', 'e']
+echo letters[0 .. 2]  # ['a', 'b', 'c']
+```
+
 ## Sequences
 
-Sequences are dynamic in size and can grow as needed, there are two ways to define a new sequence:
+Sequences can grow and shrink while the program runs - unlike arrays which stay the same size:
 
 ```
-var 
-  sequenceA: seq[char] = @['a', 'b'] # to initialize with actual values
-  sequenceB = newSeq[char](2) # use this if size known ahead of time, as it is more efficient
-```
-To add to the sequence without a defined size, we use `add`  to assign a value:
-```
-var openSequence: seq[char] = @[]
-openSequence.add('c')
-```
-To add to the sequence with a defined size, we would reference the index to add a  value:
-```
-var knownSizeSequence: seq[int] = newSeq[int](2) 
-knownSizeSequence[0] = 2
-knownSizeSequence[1] = 3
+var colors: seq[string] = @["red", "blue"]
+colors.add("green")  # now has 3 items
+echo colors[2]  # "green"
 ```
 
-### Sequence Length
-To get the sequence length, you can use the `len` syntax:
+The `@[]` means "make me an empty sequence".
+
+### Adding Items
+
+Add to an empty sequence with `add`:
+
 ```
-var sequenceNum = @[4, 5, 6]
-echo sequenceNum.len # outputs 3
+var shopping: seq[string] = @[]
+shopping.add("bread")
+shopping.add("milk")
+echo shopping.len  # 2
+```
+
+### Pre-sized Sequences
+
+If you know the size ahead of time:
+
+```
+var items: seq[int] = newSeq[int](3)
+items[0] = 1
+items[1] = 2
+items[2] = 3
 ```
 
 ## Sets
 
-Sets are an ordinal type (only accepts values that can be counted) and must each value must be unique. It can include `char`, `int8`, `int16`, `enum`, and `unit8` for example.
+Sets are like a group where each item must be unique and order doesn't matter. Great for checking "is this a valid option?"
 
 ```
-var charSet: set[char]
-charSet = {'a', 'e', 'c', 'd'}
+var vowels: set[char] = {'a', 'e', 'i', 'o', 'u'}
+echo 'a' in vowels  # true
+echo 'z' in vowels  # false
 ```
 
-The order of the items being stored are not kept track of, so we cannot use an index to get a value, but can use the `in` keyword to see if a value is in the set:
+The `in` keyword checks if something is in the set.
+
+### Set Operations
+
+You can combine sets mathematically:
+
 ```
-var charSet: set[char]
-charSet = {'a', 'e', 'c', 'd'}
-echo 'c' in charSet # outputs true
+var a = {'a', 'b', 'c'}
+var b = {'b', 'c', 'd'}
+
+echo a * b    # intersection: {'b', 'c'} - what both have
+echo a <+ b  # union: {'a', 'b', 'c', 'd'} - everything combined
+echo a - b   # difference: {'a'} - what's in a but not in b
+echo a < b   # subset check: false - is everything in a also in b?
+```
+
+## Tables
+
+Tables store key-value pairs, like a dictionary or phone book:
+
+```
+import std/tables
+
+var bookPrices = {
+  "Nim": 0,
+  "Python": 0,
+  "Rust": 29.99
+}.toTable()
+
+echo bookPrices["Nim"]    # 0.0
+bookPrices["Go"] = 24.99  # add new entry
+echo bookPrices.len      # 4
+```
+
+Look up any key instantly without searching.
+
+### Common Table Operations
+
+```
+if bookPrices.hasKey("Nim"):
+  echo "Found Nim!"
+
+bookPrices.del("Nim")  # remove an entry
+echo bookPrices.hasKey("Nim")  # false
 ```

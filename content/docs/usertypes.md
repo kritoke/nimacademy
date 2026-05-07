@@ -5,71 +5,109 @@ weight = 30
 
 # User-Defined Types
 
+Sometimes you need to create your own data types. Nim lets you do that!
+
 ## Tuples
 
-The tuple type has (optionally) named fields and the order of the fields, the values can be of different types:
+Think of a tuple like a small container that holds several pieces of related data:
 
 ```
 type
   Book = tuple[name: string, publishYear: int]
 
-var
-  got: Book
-  lotr: Book
-got = ("A Game of Thrones", 1996)
-lotr = (name: "Lord of the Rings", publishYear: 1954) # more readable version
+var got = (name: "A Game of Thrones", publishYear: 1996)
+echo got.name  # "A Game of Thrones"
+echo got.publishYear  # 1996
 ```
 
-Dot notation can used when referencing fields:
+Each piece has a name and you access it with a dot.
+
+### Accessing by Position
+
+You can also access tuple fields by their position (0, 1, 2...):
 
 ```
-echo got.name # "A Game of Thrones"
-echo got.publishYear # 1996
+var person: tuple[name: string, age: int] = ("Alice", 30)
+echo person[0]  # "Alice"
+echo person[1]  # 30
 ```
 
-You can also reference the order of the fields as well, which is useful when you have not defined a named field:
+## Enums
+
+An enum is like a dropdown menu with fixed choices - you pick one from a list:
 
 ```
 type
-  Person = (string, int)
+  Direction = enum
+    north
+    south
+    east
+    west
 
-var george: Person = ("George R. R. Martin", 1948)
-
-echo george[0] # "George R. R. Martin"
-echo george[1] # 1948
+var heading = Direction.north
+echo heading  # north
 ```
 
-Tuples do not need a separate type section when defining it:
+Use enums when you have a list of options that never change, like days of the week.
+
+### Iterating Enums
+
+You can loop through all enum values:
 
 ```
-var person: tuple[name: string, birthYear: int] = ("Bob Smith", 1333)
-
-echo person.name # "Bob Smith"
-echo person.birthYear # 1333
+for d in Direction.low .. Direction.high:
+  echo $d  # north, south, east, west
 ```
+
+Use `$` to convert enum values to strings.
 
 ## Objects
 
-An `object` type
+Objects group related data together:
 
 ```
 type
   Book = object
+    title: string
+    pages: int
+
+var myBook = Book(title: "Nim in Action", pages: 250)
+echo myBook.title   # "Nim in Action"
+echo myBook.pages   # 250
+```
+
+Objects are useful when you have structured data.
+
+### Reference Objects (ref)
+
+For most cases, use `ref object` which lets you share objects easily and handles memory automatically:
+
+```
+type
+  Book = ref object
+    title: string
+    pages: int
+
+var myBook = Book(title: "Nim in Action", pages: 250)
+```
+
+The garbage collector automatically cleans these up when they're no longer used.
+
+### Object Inheritance
+
+Objects can inherit from a base type:
+
+```
+type
+  Animal = object of RootObj
     name: string
-    publishYear: int
+
+  Dog = object of Animal
+    breed: string
+
+var myDog = Dog(name: "Buddy", breed: "Labrador")
+echo myDog.name   # "Buddy"
+echo myDog.breed  # "Labrador"
 ```
 
-You can initialize the defined object type using the following syntax:
-
-```
-var got = Book(name: "A Game of Thrones", publishYear: 1996)
-```
-
-The underlying data can be referenced using dot notation just like it was in a tuple:
-
-```
-echo got.name # "A Game of Thrones"
-echo got.publishYear # 1996
-```
-
-## Enums
+This lets you create specialized versions of things.

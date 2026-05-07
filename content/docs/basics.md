@@ -46,12 +46,11 @@ if 42 == 42:
 
 ## Assigning Variables
 
-Nim is a statically typed programming language, so a type needs to be declared before using the value:
+Nim is a **statically typed** language - this means the computer needs to know if a variable holds a number, text, or other type *before* the program runs. You can write the type yourself or let Nim figure it out:
 
 ```
-
-var num: int = 44
-
+var num: int = 44      # type written out: "num is an integer"
+var num2 = 44          # type figured out automatically
 ```
 
 Though the value can often be inferred, so it could also be declared this way:
@@ -83,13 +82,13 @@ var
 
 ```
 
-If you need to use the same word as a reserved keyword, you can use `stropping` by adding backticks (`):
+If you need to use a reserved word (like `var`) as a variable name, wrap it in backticks:
 
 ```
-
-var `var` = "this is a stropped variable
-
+var `var` = "this works!"
 ```
+
+(Don't worry too much about this - it rarely comes up.)
 
 Variables cannot begin with a number and cannot contain two consecutive underscores, it can also use Unicode characters.
 
